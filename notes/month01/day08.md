@@ -36,10 +36,10 @@ assert:
 Expected vs Actual:
 
 ## 3. Slicing Predictions
-Q1:10,15,2,25
+Q1:10,15,20,25
 Q2:20,25,30
 Q3:5,15,25
-Q4:25,20
+Q4:
 Q5:30,20,10
 
 哪些预测出错？为什么？    没有

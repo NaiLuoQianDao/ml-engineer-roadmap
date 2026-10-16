@@ -18,13 +18,13 @@ def get_first_n(items, n):
     如果列表长度不足 n，则返回整个列表。
     如果 n=0，则返回空列表。
     """
-    print( items[:n])
+    return items[:n]
 
 def get_every_second(items):
     """
     返回列表中索引为 0, 2, 4... 的元素。
     """
-    print(items[::2])
+    return items[::2]
 
 
 get_first_n([10,20,30,40], 2)	
