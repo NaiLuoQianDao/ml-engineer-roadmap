@@ -115,4 +115,4 @@ def main():
         else:
             print("无效的选择，请重新输入。")
 
-main
+main()
