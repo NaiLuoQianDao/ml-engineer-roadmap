@@ -1,7 +1,9 @@
 def parse_score(raw_value):
     try:
         true_value = int(raw_value)
-        if not 0 <= true_value <= 100:
+        if 0 <= true_value <= 100:
+            return true_value
+        else:
             return None
     except:
         return None
