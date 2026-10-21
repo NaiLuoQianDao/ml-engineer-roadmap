@@ -13,6 +13,6 @@ def take_last_n(items, n):
         if n <= len(items):   
             return items[-n:]
         else: 
-            return items
+            return items[:]
     else:
         return []

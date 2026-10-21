@@ -134,10 +134,10 @@ tests/month01/day14/test_study_report_core.py::test_build_study_report PASSED   
 
 失败数量：0
 
-CLI 运行命令及结果：
+CLI 运行命令及结果：uv run python -m ml_engineer_roadmap.experiment.month01.day14.study_report_cli
 {'valid': {'Monday': 45, 'Wednesday': 60, 'Friday': 0}, 'invalid_days': ['Tuesday', 'Thursday'], 'count': 3, 'total': 105, 'average': 35.0, 'met_goal': 1}
 
-遇到的错误与解决方法：无
+遇到的错误与解决方法：文件导入失败,尝试去除文件名src并且检查代码文件夹是否命名错误
 
 哪些内容是我独立完成的：所有
 

@@ -1,12 +1,5 @@
-def parse_minutes(raw):
-    try:
-        int_raw = int(raw)
-        if 0 <= int_raw <= 180:
-            return int_raw
-        else:
-            return None
-    except ValueError:
-        return None
+from ml_engineer_roadmap.experiment.month01.day14.challenges import parse_minutes
+
 
 def build_study_report(raw_sessions):
     valid = dict()
