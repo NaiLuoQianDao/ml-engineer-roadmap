@@ -1,20 +1,21 @@
 # ML Engineer — Current Progress
 
-> **Last reviewed:** 2026-10-20 (Asia/Shanghai)
-> **Status:** Month 01 · Week 01 completed (assessment still provisional); Week 02 Day 08–Day 11 completed and reviewed; Day 12 planned, not started.
-> **Repository baseline checked:** GitHub `main` at `48f6782b8affbf9923656133fe111a58d153f9dc` (2026-10-18, bytecode-cache cleanup).
+> **Last reviewed:** 2026-10-21 (Asia/Shanghai)
+> **Status:** Month 01 · Week 01 completed (assessment remains provisional); **Week 02 (Day 08–Day 14) completed and mentor-reviewed**; Week 03 not started.
+> **Repository baseline checked:** GitHub `main` at `386ee6a208ce2a39db28710e0a5591b4bd732505` (2026-10-21, Week 02 assessment corrections).
 > Repository: [NaiLuoQianDao/ml-engineer-roadmap](https://github.com/NaiLuoQianDao/ml-engineer-roadmap)
 
 ## Current checkpoint
 
-- **Completed learning days:** Day 01–Day 11. Week 02 is **in progress**, not yet complete.
-- **Next proposed day:** Day 12 — introductory pytest parameterization, with a short reading from the [pytest documentation](https://docs.pytest.org/en/stable/how-to/parametrize.html). Await independent work and verification.
+- **Completed learning days:** Day 01–Day 14. **Week 02 is closed after the Day 14 assessment and corrections.** Week 03 Day 15 has not started.
+- **Next proposed day:** Day 15 — strengthen list identity vs copying, function contracts and independent regression-test design before introducing additional Python engineering complexity.
+- **Week 02 mentor assessment:** **93/100 after corrections** (theory 20/20; independent challenges 30/30; integrated project 36/40; test evidence/reflection 7/10). Initial review was 83/100. This is a course mentorship score, not a certification or exhaustive code-quality claim.
 - **Week 01 assessment:** theory **18/20**; coding **40/40 provisional**, integrated project **27/30 provisional**, reflection **5/10 provisional**; approximately **90/100 initial estimate**, **not a final regraded score**.
 - **Original Day 07 code is preserved:** the original student report still has the documented invalid-score/initialization failures. Day 10's `student_performance_report_v2.py` is a **separate improvement**, not a retroactive change to the Day 07 assessment.
-- **Current concrete gains:** slicing practice and `assert` (Day 08); boundary-case design and fixing a percentage-versus-proportion error (Day 09); `try/except`, range checking and retry loops (Day 10); first organized pytest suite and a reproduced negative-number bug (Day 11).
-- **Remaining gaps:** more precise reflective/test evidence; narrow `except ValueError` rather than bare `except:` in Day 10's `parse_score`; broader invalid-input and regression checks; module/import and pytest organization; comfort with less-common Git/uv flags.
-- **Git workflow:** daily commits and pushes demonstrated; mistakenly tracked `.pyc` files removed by `48f6782b`. `.gitignore` already excludes `__pycache__/` and `*.pyc`. Branch/PR workflows and advanced Git commands remain gradual learning goals.
-- **Evidence limitation:** the separate “ML Engineer 每周复盘” conversation's summary could not be retrieved during this review. A weekly automation ran on 2026-10-18, but its message text was not accessible. No unverified claims from that recap are included.
+- **Current concrete gains:** slicing and assertions (Day 08), boundary cases and percentage bug fix (Day 09), input validation and exception handling (Day 10), pytest basics and bug reproduction (Day 11), pytest parameterization (Day 12), testable business-logic/CLI separation (Day 13), and independently implemented parsing, slicing and modular study-session reports (Day 14).
+- **Remaining gaps:** distinguish list content equality from object identity; improve non-redundant report/side-effect tests and interpretation of function contracts; sharpen debugging reflections; prefer targeted `except ValueError` rather than the still-existing bare `except:` in Day 10's `parse_score`. More complete input and regression coverage remains future work.
+- **Git workflow:** routine commits and pushes demonstrated; accidental tracked bytecode removed in `48f6782b`, cache ignore configuration improved in `22f8288`; pytest added as a development dependency in `1d5324d`. Advanced Git/uv flags and PR workflows remain guided/reference-use skills.
+- **Weekly recap:** the user supplied the 2026-10-18 recap in conversation. Its historical Day 11/management-document status has since been superseded by GitHub commits and the Day 14 review; GitHub remains the authority for submitted code and written evidence.
 
 ## Daily completion record
 
@@ -31,6 +32,9 @@
 | 09 | Boundary value analysis and pass-rate analyzer | `notes/month01/day09.md`, experiment/day09; `69d5b108`, fix `35033de` | Completed; percentage behavior corrected |
 | 10 | Input validation, `try/except`, report V2 | `notes/month01/day10.md`, experiment/day10; final fix `1a51d1a` | Completed; specified behavior reviewed; some robustness gaps |
 | 11 | pytest basics, test discovery and bug hunt | `notes/month01/day11.md`, experiment/day11 and `tests/month01/day11/`; `dbef7a2` | Completed; 15-test suite reviewed, previously reported passing |
+| 12 | pytest parameterization, invalid input and score classification | `notes/month01/day12.md`, experiment/day12 and `tests/month01/day12/`; `da43847`, reflection `cfe9d85` | Completed; 17 parameterized cases recorded passing |
+| 13 | Pure functions, modularization, CLI separation | `notes/month01/day13.md`, experiment/day13 and `tests/month01/day13/`; final note `ff665aa` | Completed; 10 dedicated cases, log records 42 passed across Days 11–13 |
+| 14 | Week 02 theory, challenges, study-session report and pytest | `notes/month01/week02_assessment.md`, experiment/day14, `tests/month01/day14/`; `4a87c58` then fix `386ee6a` | **Week 02 passed**, mentor regrade 93/100; recorded 18 Day 14 cases from initial version; fixes reviewed |
 
 All experiment paths in the table are under `src/ml_engineer_roadmap/experiment/month01/`.
 
@@ -93,6 +97,28 @@ The five GitHub `main` scripts were copied without edits to a temporary verifica
 - `get_highest` previously failed for an all-negative non-empty list; the student's new test uses `[-10, -5, -15]` and the current function initializes from `min(scores)`. The assignment explicitly assumes a **non-empty list**; `min([])` still raises `ValueError` outside that contract.
 - Initial PyPI download and file-path issues were resolved using a temporary package index and the correct `tests/month01/day11/` path. Long `uv`/Git maintenance commands are **reference-use skills**, not memorization requirements.
 
+## Week 02 closeout — Days 12–14 (2026-10-20/21)
+
+### Day 12 — introductory pytest parameterization
+
+- `da43847` introduces 3 test files / **17 parametrized pytest cases** and a `classify_score` function rejecting non-integer inputs, including booleans. Reflection corrections were pushed as `cfe9d85`.
+- The student's note records **17 passed**. The prior mentor review inspected the submitted cases; this does not establish exhaustive type/value coverage.
+- pytest was subsequently added to the project's development dependencies (`pyproject.toml` and `uv.lock`; `1d5324d`) so `uv run python -m pytest` works without temporary `--with` dependencies.
+
+### Day 13 — modular, testable functions
+
+- `student_report_core.py` returns statistics and a new passing-students dictionary; `student_report_cli.py` handles display and uses an entrypoint guard.
+- The student's Day 13 note records **10 passed** for Day 13, plus an explicit **42 passed** Windows pytest run covering the Day 11–13 suite. This output predates Day 14 and must not be described as an all-Day-14 regression run.
+- Functions meet the assigned domain contract; avoiding redundant intermediate dictionary copying and explaining pure functions precisely remain improvement opportunities.
+
+### Day 14 — Week 02 assessment and revision
+
+- Initial submission `4a87c58` contains five theory answers (**all correct**) and two Python challenge functions, a report core, a CLI, and test files. The student's assessment note records **18 passed** for the **initial Day 14** pytest suite plus CLI output of 3 valid records, 105 total minutes, average 35.0 and 1 met goal.
+- Initial review identified `take_last_n` returning the original list object for `n > len(items)`, and a duplicate `parse_minutes` implementation in the core module. The student corrected both in `386ee6a`: returning `items[:]` and importing the single implementation from `challenges.py`.
+- **Mentor's final teaching score: 93/100 after revision** (Part A 20/20, Part B 30/30, Part C 36/40, Part D 7/10), up from initial **83/100**. This score reflects guided review and corrections and should not be conflated with a first-attempt independent-exam score.
+- **Verification distinction:** submitted initial-version pytest evidence (18 passed) and earlier 42-test regression evidence exist in notes; the correction commit was source-reviewed, and a previous mentor response described additional isolated checks. No post-correction Windows **full Month 01** pytest output is preserved in the repository. Week 03 should begin with a complete regression run and focused new tests.
+- **Follow-up areas:** build better tests for empty/all-invalid reports, input immutability and list identity; avoid duplicate tests for the same conversion function; record changes and actual command output accurately.
+
 ## Immediate follow-up
 
 - [x] Revisit exclusive-stop slicing, ordinary and empty selections (Day 08).
@@ -102,9 +128,12 @@ The five GitHub `main` scripts were copied without edits to a temporary verifica
 - [x] Remove tracked `.pyc` caches from Git without deleting original source (commit `48f6782b`).
 - [ ] Keep the original Day 07 assessment provisional; do not replace original code with V2 or silently change the assessment score.
 - [ ] Improve exception specificity, test isolation/import behavior and reproducible regression evidence gradually.
-- [ ] Day 12: write first `@pytest.mark.parametrize` tests and explain test case inputs/expected outputs before using advanced pytest features.
-- [ ] At the next weekly review, revisit logging precision, independent debugging, and how to read unfamiliar command flags safely.
-- [ ] Integrate the separate weekly recap only after its actual contents become available and can be checked against repository evidence.
+- [x] Day 12: introduce `@pytest.mark.parametrize` with recorded 17 cases and corrected terminology.
+- [x] Day 13: separate business computation from CLI interaction and verify the recorded 42-case Days 11–13 regression suite.
+- [x] Day 14: complete Week 02 assessment and correct the list-identity and duplicated-function defects (mentor score 93/100 after review).
+- [x] Reconcile the separate weekly recap supplied in the conversation with updated GitHub code and logs.
+- [ ] At the start of Week 03, run and preserve output of a **full** `uv run python -m pytest tests/month01/ -v` after the Day 14 corrections.
+- [ ] Improve test independence, no-mutation checks and weekly reflective evidence before advancing too quickly.
 
 ## Tools and learning expectations
 

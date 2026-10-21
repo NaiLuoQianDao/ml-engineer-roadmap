@@ -32,8 +32,8 @@ These phase boundaries are provisional. Revisit them at monthly reviews; do not 
 | Week | Plan | Status |
 | --- | --- | --- |
 | Week 01 | Environment & Git; variables & functions; conditionals; loops; lists & tuples; dictionaries & sets; assessment | **Completed; assessment partly provisional** |
-| Week 02 | Strengthen slicing, functions, debugging and input validation; introduce new Python concepts in small verified steps | **Not started** |
-| Week 03 | To be assigned after Week 02 review | Not assigned |
+| Week 02 | Slicing, boundaries, input validation, pytest, parameterization, modularization and integrated assessment (Days 08–14) | **Completed; mentor regrade 93/100 after corrections** |
+| Week 03 | Reinforce references/copying, code contracts, error handling and independent regression-test design; precise daily tasks to be assigned next | **Planned; not started** |
 | Week 04 | Foundation consolidation and a verified small project | Provisional |
 
 ### Week 01 evidence
@@ -41,6 +41,14 @@ These phase boundaries are provisional. Revisit them at monthly reviews; do not 
 - [Week 01 assessment](../notes/month01/week01_assessment.md)
 - [Day 01–06 notes](../notes/month01/)
 - [Day 07 source code](../src/ml_engineer_roadmap/experiment/month01/day07/)
+
+### Week 02 evidence
+
+- [Week 02 assessment, theory answers and original test transcript](../notes/month01/week02_assessment.md)
+- [Day 08–13 learning logs](../notes/month01/)
+- [Day 14 study-session report and challenge source](../src/ml_engineer_roadmap/experiment/month01/day14/)
+- [Day 14 pytest files](../tests/month01/day14/)
+- Day 14 original submission `4a87c58`, then corrections to list identity and module reuse in `386ee6a`. Mentor regrade **93/100**; the recorded Day 14 `18 passed` transcript predates the corrections. See [PROGRESS.md](PROGRESS.md) for verification qualifications.
 
 ## Weekly teaching cycle
 
