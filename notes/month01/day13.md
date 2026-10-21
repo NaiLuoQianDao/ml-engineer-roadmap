@@ -80,7 +80,7 @@ uv run python -m ml_engineer_roadmap.experiment.month01.day13.student_report_cli
 
 我能否独立解释模块之间的 import：可以让程序调用不同文件内的代码
 
-今天仍然不熟悉的知识： pytest.approx()         uv run python -m pytest tests/month01/day13/ -v                   这两个内容老师前面好像没提到?我不知道要不要掌握,要掌握到什么程度?  
+今天仍然不熟悉的知识： pytest.approx()         uv run python -m pytest tests/month01/day13/ -v (和uv run python -m pytest tests/month01/day13/ -v)                   这两个内容老师前面好像没提到?我不知道要不要掌握,要掌握到什么程度?  
 
 ## 7. Next Step（下一步）
 
