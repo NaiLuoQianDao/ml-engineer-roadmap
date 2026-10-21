@@ -34,7 +34,12 @@ Date: 2026-10-21
 
 什么样的函数属于纯函数？
 
-我的理解：只完成某一项具体功能的函数
+我的理解：相同输入产生相同输出；执行时不产生副作用。
+例如：
+def add(a, b):    return a + b
+这是纯函数。
+而下面的函数虽然也只负责一件事情，却有输出副作用：
+def show_score(score):    print(score)
 
 ## 3. Programming Exercises（编程练习）
 
@@ -51,6 +56,9 @@ get_passing_students(students)
 ## 4. Testing Evidence（测试证据）
 
 执行的测试命令：
+uv run python -m pytest tests/month01/day13/ -v
+
+CLI 运行命令:
 uv run python -m ml_engineer_roadmap.experiment.month01.day13.student_report_cli
 
 测试用例总数：10
