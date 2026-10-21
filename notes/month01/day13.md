@@ -49,9 +49,9 @@ calculate_statistics(students)
 
 get_passing_students(students)
 
-每个函数的职责：
+每个函数的职责：返回统计学生成绩信息,返回及格学生字典
 
-为什么要避免修改原始 students 字典：
+为什么要避免修改原始 students 字典：可能还需要原始字典执行其他操作.
 
 ## 4. Testing Evidence（测试证据）
 
@@ -93,3 +93,57 @@ uv run python -m ml_engineer_roadmap.experiment.month01.day13.student_report_cli
 ## 7. Next Step（下一步）
 
 等待 Day 13 代码验收与下一阶段任务安排。
+
+运行结果:
+(ml-engineer-roadmap) PS C:\Users\lk120\dev\ml-engineer-roadmap> uv run python -m pytest tests/month01/ -v
+================================= test session starts ==================================
+platform win32 -- Python 3.12.14, pytest-9.1.1, pluggy-1.7.0 -- C:\Users\lk120\dev\ml-engineer-roadmap\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\lk120\dev\ml-engineer-roadmap
+configfile: pyproject.toml
+collected 42 items                                                                      
+
+tests/month01/day11/test_bug_hunt.py::test_positive_numbers PASSED                [  2%]
+tests/month01/day11/test_bug_hunt.py::test_mixed_numbers PASSED                   [  4%]
+tests/month01/day11/test_bug_hunt.py::test_special_case PASSED                    [  7%]
+tests/month01/day11/test_first.py::test_addition PASSED                           [  9%]
+tests/month01/day11/test_first.py::test_subtraction PASSED                        [ 11%]
+tests/month01/day11/test_score_utils.py::test_score_below_minimum PASSED          [ 14%]
+tests/month01/day11/test_score_utils.py::test_score_lower_boundary PASSED         [ 16%]
+tests/month01/day11/test_score_utils.py::test_score_passing_boundary PASSED       [ 19%]
+tests/month01/day11/test_score_utils.py::test_score_upper_boundary PASSED         [ 21%]
+tests/month01/day11/test_score_utils.py::test_score_above_maximum PASSED          [ 23%]
+tests/month01/day11/test_score_utils.py::test_empty_scores PASSED                 [ 26%]
+tests/month01/day11/test_score_utils.py::test_all_passing PASSED                  [ 28%]
+tests/month01/day11/test_score_utils.py::test_partially_passing PASSED            [ 30%]
+tests/month01/day11/test_score_utils.py::test_all_failing PASSED                  [ 33%]
+tests/month01/day11/test_score_utils.py::test_passing_boundary PASSED             [ 35%]
+tests/month01/day12/test_parametrize_demo.py::test_multiply[2-3-6] PASSED         [ 38%]
+tests/month01/day12/test_parametrize_demo.py::test_multiply[0-5-0] PASSED         [ 40%]
+tests/month01/day12/test_parametrize_demo.py::test_multiply[-2-4--8] PASSED       [ 42%]
+tests/month01/day12/test_score_classifier.py::test_classify_score[0-Fail] PASSED  [ 45%]
+tests/month01/day12/test_score_classifier.py::test_classify_score[60-Pass] PASSED [ 47%]
+tests/month01/day12/test_score_classifier.py::test_classify_score[50.9-Invalid] PASSED [ 50%]
+tests/month01/day12/test_score_classifier.py::test_classify_score[59-Fail] PASSED [ 52%]
+tests/month01/day12/test_score_classifier.py::test_classify_score[100-Pass] PASSED [ 54%]
+tests/month01/day12/test_score_classifier.py::test_classify_score[True-Invalid] PASSED [ 57%]
+tests/month01/day12/test_score_classifier.py::test_classify_score[abc-Invalid] PASSED [ 59%]
+tests/month01/day12/test_score_classifier.py::test_classify_score[-1-Invalid] PASSED [ 61%]
+tests/month01/day12/test_score_classifier.py::test_classify_score[101-Invalid] PASSED [ 64%]
+tests/month01/day12/test_score_validation.py::test_valid_score_parametrized[-1-False] PASSED [ 66%]
+tests/month01/day12/test_score_validation.py::test_valid_score_parametrized[0-True] PASSED [ 69%]
+tests/month01/day12/test_score_validation.py::test_valid_score_parametrized[-10-False] PASSED [ 71%]
+tests/month01/day12/test_score_validation.py::test_valid_score_parametrized[101-False] PASSED [ 73%]
+tests/month01/day12/test_score_validation.py::test_valid_score_parametrized[100-True] PASSED [ 76%]
+tests/month01/day13/test_student_report_core.py::test_empty_statistics PASSED     [ 78%]
+tests/month01/day13/test_student_report_core.py::test_passing_empty_dict PASSED   [ 80%]
+tests/month01/day13/test_student_report_core.py::test_single_student PASSED       [ 83%]
+tests/month01/day13/test_student_report_core.py::test_all_passing PASSED          [ 85%]
+tests/month01/day13/test_student_report_core.py::test_all_failing PASSED          [ 88%]
+tests/month01/day13/test_student_report_core.py::test_passing_boundary PASSED     [ 90%]
+tests/month01/day13/test_student_report_core.py::test_highest_lowest PASSED       [ 92%]
+tests/month01/day13/test_student_report_core.py::test_average_score PASSED        [ 95%]
+tests/month01/day13/test_student_report_core.py::test_no_side_effect_statistics PASSED [ 97%]
+tests/month01/day13/test_student_report_core.py::test_no_side_effect_passing PASSED [100%]
+
+================================== 42 passed in 0.09s ==================================
