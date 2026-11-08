@@ -33,8 +33,8 @@ These phase boundaries are provisional. Revisit them at monthly reviews; do not 
 | --- | --- | --- |
 | Week 01 | Environment & Git; variables & functions; conditionals; loops; lists & tuples; dictionaries & sets; assessment | **Completed; assessment partly provisional** |
 | Week 02 | Slicing, boundaries, input validation, pytest, parameterization, modularization and integrated assessment (Days 08–14) | **Completed; mentor regrade 93/100 after corrections** |
-| Week 03 | Reinforce references/copying, code contracts, error handling and independent regression-test design; precise daily tasks to be assigned next | **Planned; not started** |
-| Week 04 | Foundation consolidation and a verified small project | Provisional |
+| Week 03 | References/copying (Day 15), exception contracts and pytest debugging (Day 16), type hints and prediction evaluation (Day 17); file I/O and structured data next; Week 03 assessment pending | **In progress; Days 15–17 submitted/reviewed, not yet assessed as a week** |
+| Week 04 | Foundation consolidation; proposed Student Data Processing Pipeline using CSV input, validation and JSON output; requirements and timing remain provisional | **Planned; not started** |
 
 ### Week 01 evidence
 
@@ -49,6 +49,14 @@ These phase boundaries are provisional. Revisit them at monthly reviews; do not 
 - [Day 14 study-session report and challenge source](../src/ml_engineer_roadmap/experiment/month01/day14/)
 - [Day 14 pytest files](../tests/month01/day14/)
 - Day 14 original submission `4a87c58`, then corrections to list identity and module reuse in `386ee6a`. Mentor regrade **93/100**; the recorded Day 14 `18 passed` transcript predates the corrections. See [PROGRESS.md](PROGRESS.md) for verification qualifications.
+
+### Week 03 evidence and next steps
+
+- [Day 15 notes](../notes/month01/day15.md), [source](../src/ml_engineer_roadmap/experiment/month01/day15/) and [tests](../tests/month01/day15/) — list identity/copy semantics, bonus transform and Day 14 regression (`de4207a`).
+- [Day 16 notes](../notes/month01/day16.md), [source](../src/ml_engineer_roadmap/experiment/month01/day16/) and [tests](../tests/month01/day16/) — strict score checks and bulk import; logged **87 passed** Month 01 regression; pytest import-name conflict repaired (`909b503`).
+- [Day 17 notes](../notes/month01/day17.md), [source](../src/ml_engineer_roadmap/experiment/month01/day17/) and [tests](../tests/month01/day17/) — labeled classification prediction summary; reported **21 Day 17** and **108 total Month 01** test cases, not independent CI verification (`b0ee476`, `0f8dc4b`).
+- The October monthly report and November 1 weekly report are historical snapshots through Day 16, not a reason to mark Day 17 unfinished as of November 8. The student opted not to revise original Days 15–16 submissions.
+- **Next:** Day 18 file I/O and `pathlib`; then CSV/JSON, independent end-to-end data processing, Week 03 assessment. **Month 01 is not completed** and the Week 04 project remains proposed rather than verified.
 
 ## Weekly teaching cycle
 
