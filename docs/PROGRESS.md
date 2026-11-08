@@ -1,21 +1,21 @@
 # ML Engineer — Current Progress
 
-> **Last reviewed:** 2026-10-21 (Asia/Shanghai)
-> **Status:** Month 01 · Week 01 completed (assessment remains provisional); **Week 02 (Day 08–Day 14) completed and mentor-reviewed**; Week 03 not started.
-> **Repository baseline checked:** GitHub `main` at `386ee6a208ce2a39db28710e0a5591b4bd732505` (2026-10-21, Week 02 assessment corrections).
+> **Last reviewed:** 2026-11-08 (Asia/Shanghai)
+> **Status:** Month 01 · Week 01 completed (assessment partly provisional); Week 02 (Day 08–14) completed, mentor regrade 93/100; **Week 03 in progress: Days 15–17 submitted/reviewed; Day 18 next**.
+> **Repository baseline checked:** GitHub `main` at `0f8dc4b7f88e62764ee6217dd6c772c80c1c22fa` (2026-11-07, Day 17 learning-note clarification).
 > Repository: [NaiLuoQianDao/ml-engineer-roadmap](https://github.com/NaiLuoQianDao/ml-engineer-roadmap)
 
 ## Current checkpoint
 
-- **Completed learning days:** Day 01–Day 14. **Week 02 is closed after the Day 14 assessment and corrections.** Week 03 Day 15 has not started.
-- **Next proposed day:** Day 15 — strengthen list identity vs copying, function contracts and independent regression-test design before introducing additional Python engineering complexity.
+- **Completed/submitted learning days:** Day 01–Day 17. Days 15–17 have GitHub submissions and mentor source reviews; **open improvement items were not retroactively fixed**. Week 03 has **not** had its final assessment.
+- **Next proposed day:** Day 18 — introductory file I/O and `pathlib`, followed by CSV/JSON and a small data-processing workflow.
 - **Week 02 mentor assessment:** **93/100 after corrections** (theory 20/20; independent challenges 30/30; integrated project 36/40; test evidence/reflection 7/10). Initial review was 83/100. This is a course mentorship score, not a certification or exhaustive code-quality claim.
 - **Week 01 assessment:** theory **18/20**; coding **40/40 provisional**, integrated project **27/30 provisional**, reflection **5/10 provisional**; approximately **90/100 initial estimate**, **not a final regraded score**.
 - **Original Day 07 code is preserved:** the original student report still has the documented invalid-score/initialization failures. Day 10's `student_performance_report_v2.py` is a **separate improvement**, not a retroactive change to the Day 07 assessment.
-- **Current concrete gains:** slicing and assertions (Day 08), boundary cases and percentage bug fix (Day 09), input validation and exception handling (Day 10), pytest basics and bug reproduction (Day 11), pytest parameterization (Day 12), testable business-logic/CLI separation (Day 13), and independently implemented parsing, slicing and modular study-session reports (Day 14).
-- **Remaining gaps:** distinguish list content equality from object identity; improve non-redundant report/side-effect tests and interpretation of function contracts; sharpen debugging reflections; prefer targeted `except ValueError` rather than the still-existing bare `except:` in Day 10's `parse_score`. More complete input and regression coverage remains future work.
+- **Current concrete gains:** slicing, boundary analysis, validation, pytest and module design (Days 08–14); list copying/aliasing, regression tests and no-mutation design (Day 15); strict parsing, `raise`, `pytest.raises`, batching and a real pytest module-name conflict fix (Day 16); type hints, `zip`, `enumerate`, label validation and classification accuracy (Day 17).
+- **Remaining gaps:** write precise exception handlers (bare `except:` remains in historical Day 10 and Day 16 files), distinguish `TypeError` vs `ValueError` when explaining contracts, test the order of validation vs length checking in Day 17, design non-redundant/contract-grounded tests, and record concise but meaningful reflections. Student elected **not to retroactively revise Days 15–16**; use future exercises to reassess these skills.
 - **Git workflow:** routine commits and pushes demonstrated; accidental tracked bytecode removed in `48f6782b`, cache ignore configuration improved in `22f8288`; pytest added as a development dependency in `1d5324d`. Advanced Git/uv flags and PR workflows remain guided/reference-use skills.
-- **Weekly recap:** the user supplied the 2026-10-18 recap in conversation. Its historical Day 11/management-document status has since been superseded by GitHub commits and the Day 14 review; GitHub remains the authority for submitted code and written evidence.
+- **Historical reviews:** the user supplied a 2026-10-31 monthly review (covering 2026-10-06–31) and a 2026-11-01 weekly review (covering 2026-10-26–11-01). Both correctly described the **then-current** Day 16 checkpoint, not the 2026-11-08 state. The Day 17 commits on November 7 supersede their “Day 17 not yet submitted” status. GitHub commits, source, and logs remain the authority for evidence.
 
 ## Daily completion record
 
@@ -35,6 +35,9 @@
 | 12 | pytest parameterization, invalid input and score classification | `notes/month01/day12.md`, experiment/day12 and `tests/month01/day12/`; `da43847`, reflection `cfe9d85` | Completed; 17 parameterized cases recorded passing |
 | 13 | Pure functions, modularization, CLI separation | `notes/month01/day13.md`, experiment/day13 and `tests/month01/day13/`; final note `ff665aa` | Completed; 10 dedicated cases, log records 42 passed across Days 11–13 |
 | 14 | Week 02 theory, challenges, study-session report and pytest | `notes/month01/week02_assessment.md`, experiment/day14, `tests/month01/day14/`; `4a87c58` then fix `386ee6a` | **Week 02 passed**, mentor regrade 93/100; recorded 18 Day 14 cases from initial version; fixes reviewed |
+| 15 | List identity, shallow copying, bonus transform and Day 14 regression | `notes/month01/day15.md`, experiment/day15, `tests/month01/day15/`; `de4207a` | Submitted and source-reviewed; 17 test cases present in committed files, note captured only an earlier 5-pass run; chosen refinements deferred |
+| 16 | Function contracts, strict score validation, batch import, `pytest.raises` | `notes/month01/day16.md`, experiment/day16, `tests/month01/day16/`; `909b503` | Submitted; note records **10 passed** Day 16 and **87 passed** Month 01 regression on Windows; broad `except:` retained by student choice |
+| 17 | Type hints, `enumerate`, `zip`, label validation and basic prediction accuracy | `notes/month01/day17.md`, experiment/day17, `tests/month01/day17/`; `b0ee476` plus note `0f8dc4b` | Submitted/source-reviewed; note reports **21 passed** Day 17 and **108** total Month 01 tests; validation-before-length edge case not yet corrected |
 
 All experiment paths in the table are under `src/ml_engineer_roadmap/experiment/month01/`.
 
@@ -119,6 +122,14 @@ The five GitHub `main` scripts were copied without edits to a temporary verifica
 - **Verification distinction:** submitted initial-version pytest evidence (18 passed) and earlier 42-test regression evidence exist in notes; the correction commit was source-reviewed, and a previous mentor response described additional isolated checks. No post-correction Windows **full Month 01** pytest output is preserved in the repository. Week 03 should begin with a complete regression run and focused new tests.
 - **Follow-up areas:** build better tests for empty/all-invalid reports, input immutability and list identity; avoid duplicate tests for the same conversion function; record changes and actual command output accurately.
 
+## Week 03 progress — Days 15–17 (reviewed 2026-11-08)
+
+- **Day 15 — references and copy semantics:** `add_bonus` creates a new list and caps scores at 100; Day 14 regression tests cover the previous aliasing bug. Mentor review accepted the core functions but observed redundant or out-of-contract tests and a partially stale testing transcript. The student chose to continue without retroactive changes.
+- **Day 16 — exception contracts:** `parse_score_strict` raises on invalid input and `import_scores` processes mixed records. Student renamed `test_score_validation.py` to `test_day16_score_validation.py` after a pytest `import file mismatch` with Day 12. The committed note includes Windows Python 3.12.14/pytest 9.1.1 output **87 passed** (Month 01) and **10 passed** (Day 16). The broad `except:` in `import_scores` and test/terminology gaps were noted, not revised.
+- **Day 17 — prediction evaluator:** label checks, pairwise comparison, accuracy and incorrect indices were implemented; 21 Day 17 pytest cases and a total of **108 Month 01 cases** are reported in `day17.md`. Note clarification landed in `0f8dc4b`. The log lists aggregate results rather than full console output; **not** independent CI verification. The `evaluate_predictions` function currently checks `len` before validating input types, so a malformed same/unequal-length input can raise a different exception than the contract intends. Revisit in future exercises; the Week 03 assessment is pending.
+- **Reviews received:** the 2026-10-31 monthly report and 2026-11-01 weekly report describe the state as it stood at their reporting dates (through Day 16). They recommend stronger independent test design and a small CSV/JSON data pipeline; Day 17 was submitted after their reporting windows.
+- **Evidence boundary:** test counts above are drawn from student-authored logs and committed test files; no GitHub Actions CI workflow was present at this review. Submitted, statically reviewed, logged as passing, and independently rerun are different claims.
+
 ## Immediate follow-up
 
 - [x] Revisit exclusive-stop slicing, ordinary and empty selections (Day 08).
@@ -132,8 +143,13 @@ The five GitHub `main` scripts were copied without edits to a temporary verifica
 - [x] Day 13: separate business computation from CLI interaction and verify the recorded 42-case Days 11–13 regression suite.
 - [x] Day 14: complete Week 02 assessment and correct the list-identity and duplicated-function defects (mentor score 93/100 after review).
 - [x] Reconcile the separate weekly recap supplied in the conversation with updated GitHub code and logs.
-- [ ] At the start of Week 03, run and preserve output of a **full** `uv run python -m pytest tests/month01/ -v` after the Day 14 corrections.
+- [x] Re-run the Month 01 suite after Day 14 corrections: Day 16 note preserves **87 passed**; Day 17 note reports **108 collected/passed** but has less detailed output than Day 16. These are logged local runs, not CI.
 - [ ] Improve test independence, no-mutation checks and weekly reflective evidence before advancing too quickly.
+
+- [x] Submit and review Days 15–17; record remaining gaps without requiring retroactive edits to Days 15–16.
+- [ ] Begin Day 18 file I/O and `pathlib`; next introduce CSV/JSON and eventually an independently designed data-processing pipeline.
+- [ ] Complete Week 03 independent assessment before marking Week 03 finished.
+- [ ] Start Month 01 final assessment/Week 04 project only after prerequisites and tests are verified.
 
 ## Tools and learning expectations
 
