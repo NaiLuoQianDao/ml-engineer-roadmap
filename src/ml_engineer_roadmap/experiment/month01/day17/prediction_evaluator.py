@@ -12,10 +12,10 @@ def evaluate_predictions(
         'accuracy': None,
         'wrong_indices': [],
     }
-    if len(actual) != len(predicted):
-        raise ValueError
     validate_labels(actual)
     validate_labels(predicted)
+    if len(actual) != len(predicted):
+        raise ValueError
     if actual:
         out_dict['total'] = len(actual)    
         compared_group = zip(actual, predicted)
