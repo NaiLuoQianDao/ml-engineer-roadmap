@@ -9,8 +9,8 @@ copied[0]["score"] = 95
 
 Q2 — Error Handling
 解释 TypeError、ValueError 和 FileNotFoundError 的区别，并分别给出一个适用场景。
-TypeError为传入类型错误,比如在调用某些函数时传入了错误类型的参数.
-ValueError为数值错误,比如令一个整型与字符串数字相加就会抛出ValueError
+TypeError为传入类型错误,比如在调用某些函数时传入了错误类型的参数.例如:5 + "3"  
+ValueError为数值错误,比如  int("abc")  # ValueError
 FileNoTFoundError为未找到文件,比如定义一个Path类,如果该地址没有文件使用path.opean就会抛出该异常
 
 Q3 — CSV Validation
@@ -20,7 +20,7 @@ Alice,45,extra
 Bob
 请解释两条记录可能产生怎样的字典结构，以及为什么必须在处理分钟数之前检查字段完整性。
 [
-    {'name' : 'Alice', 'minutes' : '45', None : 'extra'},
+    {'name' : 'Alice', 'minutes' : '45', None : ['extra']},
     {'name' : 'Bob', 'minutes' : None}
 ]
 如果不先检查的话检测函数遇到None会抛出TypeError,但是函数契约希望抛出ValueError
